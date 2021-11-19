@@ -1,67 +1,144 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function App() {
-	const questions = [
-		{
-			questionText: 'What is the capital of France?',
-			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'Who is CEO of Tesla?',
-			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'The iPhone was created by which company?',
-			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
-			],
-		},
-		{
-			questionText: 'How many Harry Potter books are there?',
-			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
-			],
-		},
-	];
+  const questions = [
+    {
+      questionText: "What What is the name of the famous streaming channel showcasing electronic music DJ sets that was created in 2019 ?is the capital of France?",
+      answerOptions: [
+        { answerText: "Boiler room", isCorrect: false },
+        { answerText: "Pano TV", isCorrect: false },
+        { answerText: "Party Fun", isCorrect: false },
+        { answerText: "Hör", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Which iconic duo played in a LED pyramid in 2006 in Coachella ?",
+      answerOptions: [
+        { answerText: "David & Cathy Guetta", isCorrect: false },
+        { answerText: "Keumzer & Lobby", isCorrect: false },
+        { answerText: "Daft Punk", isCorrect: true },
+        { answerText: "Tale of Us", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Who is the owner of the techno label Axis records ?",
+      answerOptions: [
+        { answerText: "Ben klock", isCorrect: false },
+        { answerText: "Jeff Mills", isCorrect: true },
+        { answerText: "Nina Kraviz ", isCorrect: false },
+        { answerText: "Slam", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Where does the name Berghain come from ?",
+      answerOptions: [
+        { answerText: "The name of a Berlin underground party", isCorrect: false },
+        { answerText: "The DJ name of his creator", isCorrect: false },
+        { answerText: "The name of a sex position", isCorrect: false },
+        { answerText: "The name of Berlin neighbourhoods", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "During the festival “Weather Festival” that took place on the airport Le Bourget in Paris in 2014, which celebrity took off in front of the crowd during the set of the collective Camion Bazar ?",
+      answerOptions: [
+        { answerText: "Francois Hollande", isCorrect: false },
+        { answerText: "Lionel Messi", isCorrect: false },
+        { answerText: "Shakira", isCorrect: false },
+        { answerText: "Barack Obama", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Which island is known for its crazy endless parties ?",
+      answerOptions: [
+        { answerText: "Corsica", isCorrect: false },
+        { answerText: "Ibiza", isCorrect: true },
+        { answerText: "Sardinia", isCorrect: false },
+        { answerText: "Island", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Where does house music is originally from ?",
+      answerOptions: [
+        { answerText: "Chicago", isCorrect: true },
+        { answerText: "Berlin", isCorrect: false },
+        { answerText: "Detroit", isCorrect: false },
+        { answerText: "London", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What is the name of the house music legend who produced “Get Get Down” and sadly died at the age of 50 in 2021 ?",
+      answerOptions: [
+        { answerText: "Eric Morillo", isCorrect: false },
+        { answerText: "Kelli Hand", isCorrect: false },
+        { answerText: "Paul Johnson", isCorrect: true },
+        { answerText: "Avicii", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What is Roland TR 909 ?",
+      answerOptions: [
+        { answerText: "A music production software", isCorrect: false },
+        { answerText: "A techno dj name", isCorrect: false },
+        { answerText: "A new drug ", isCorrect: false },
+        { answerText: "A drum machine", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Who produced the famous track “Move your body” ?",
+      answerOptions: [
+        { answerText: "Marshall Jefferson", isCorrect: true },
+        { answerText: "Kerri Chandler", isCorrect: false },
+        { answerText: "Frankie Knuckles", isCorrect: false },
+        { answerText: "Dj Deeon", isCorrect: false },
+      ],
+    },
+  ];
 
-	return (
-		<div className='app'>
-			{/* HINT: replace "false" with logic to display the 
+  const [currentQuestion, setCurrentQuestion] = useState(0); // state object
+
+  const [showScore, setShowScore] = useState(false);
+
+  const [score, setScore] = useState(0)
+
+  const handleAnswerButtonClick = (isCorrect) => {
+    if (isCorrect === true) {
+setScore(score +1);    }
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
+    }
+  };
+
+  return (
+    <div className="app">
+      {/* HINT: replace "false" with logic to display the 
       score when the user has answered all the questions */}
-			{false ? (
-				<div className='score-section'>You scored 1 out of {questions.length}</div>
-			) : (
-				<>
-					<div className='question-section'>
-						<div className='question-count'>
-							<span>Question 1</span>/{questions.length}
-						</div>
-						<div className='question-text'>This is where the question text should go</div>
-					</div>
-					<div className='answer-section'>
-						<button>Answer 1</button>
-						<button>Answer 2</button>
-						<button>Answer 3</button>
-						<button>Answer 4</button>
-					</div>
-				</>
-			)}
-		</div>
-	);
+      {showScore ? (
+        <><div className="score-section">
+          You scored {score} out of {questions.length}
+        </div><div>Answers</div></>
+      ) : (
+        <>
+          <div className="question-section">
+            <div className="question-count">
+              <span>Question {currentQuestion+1}</span>/{questions.length}
+            </div>
+            <div className="question-text">
+              {questions[currentQuestion].questionText}
+            </div>
+          </div>
+          <div className="answer-section">
+            {questions[currentQuestion].answerOptions.map((answerOption) => (
+              <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>
+                {answerOption.answerText}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
 }
