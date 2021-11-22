@@ -135,7 +135,7 @@ export default function App() {
             <div class="question">{questions[0].questionText}</div>
             <div class="answer">Hör</div>
             <div class="question">{questions[1].questionText}</div>
-            <div class="answer">Keumzer & Lobby</div>
+            <div class="answer">Daft Punk</div>
             <div class="question">{questions[2].questionText}</div>
             <div class="answer">Jeff Mills</div>
             <div class="question">{questions[3].questionText}</div>
