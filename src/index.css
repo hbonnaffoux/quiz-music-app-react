@@ -12,15 +12,14 @@ body {
 }
 
 body {
-  background-color: #daa520;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-}
+  min-height: 100vh;}
 
 .app {
-  background-color: #283747;
+  background-color: black;
   margin: 30px;
   min-height: 200px;
   height: min-content;
@@ -29,6 +28,8 @@ body {
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
+  border: solid 1px #1DB954
+  ;
 }
 
 .score-section {
@@ -82,9 +83,9 @@ button {
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  border: 5px solid #234668;
+  border: 1px solid 	#696969;
   cursor: pointer;
 }
 
@@ -111,4 +112,15 @@ button svg {
 .answer {
   color: #2f922f;
   font-weight: bolder;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+}
+
+.title h1{;
+  font-family: 'Saira Condensed', sans-serif;
+  color: #1DB954;
+  font-size:40px;
 }

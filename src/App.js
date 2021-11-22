@@ -121,6 +121,8 @@ export default function App() {
   };
 
   return (
+    <div className="root">
+    <div className="title"><h1>Electronic music quiz</h1></div>
     <div className="app">
       {/* HINT: replace "false" with logic to display the 
       score when the user has answered all the questions */}
@@ -129,7 +131,7 @@ export default function App() {
           <div className="score-section">
             You scored {score} out of {questions.length}
           </div>
-          <div class="answers-section">
+          <div class="answers-display">
             <div class="question">{questions[0].questionText}</div>
             <div class="answer">Hör</div>
             <div class="question">{questions[1].questionText}</div>
@@ -173,6 +175,7 @@ export default function App() {
           </div>
         </>
       )}
+    </div>
     </div>
   );
 }
