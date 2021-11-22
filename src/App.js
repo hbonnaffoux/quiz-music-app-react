@@ -135,23 +135,23 @@ export default function App() {
             <div class="question">{questions[0].questionText}</div>
             <div class="answer">Hör</div>
             <div class="question">{questions[1].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Keumzer & Lobby</div>
             <div class="question">{questions[2].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Jeff Mills</div>
             <div class="question">{questions[3].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">The name of Berlin neighbourhoods</div>
             <div class="question">{questions[4].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Barack Obama</div>
             <div class="question">{questions[5].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Ibiza</div>
             <div class="question">{questions[6].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Chicago</div>
             <div class="question">{questions[7].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Paul Johnson</div>
             <div class="question">{questions[8].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">A drum machine</div>
             <div class="question">{questions[9].questionText}</div>
-            <div class="answer">Hör</div>
+            <div class="answer">Marshall Jefferson</div>
           </div>
         </>
       ) : (
