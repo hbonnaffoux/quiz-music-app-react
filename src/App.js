@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export default function App() {
   const questions = [
     {
-      questionText: "What What is the name of the famous streaming channel showcasing electronic music DJ sets that was created in 2019 ?is the capital of France?",
+      questionText:
+        "What is the name of the famous streaming channel showcasing electronic music DJ sets that was created in 2019 ?",
       answerOptions: [
         { answerText: "Boiler room", isCorrect: false },
         { answerText: "Pano TV", isCorrect: false },
@@ -12,7 +13,8 @@ export default function App() {
       ],
     },
     {
-      questionText: "Which iconic duo played in a LED pyramid in 2006 in Coachella ?",
+      questionText:
+        "Which iconic duo played in a LED pyramid in 2006 in Coachella ?",
       answerOptions: [
         { answerText: "David & Cathy Guetta", isCorrect: false },
         { answerText: "Keumzer & Lobby", isCorrect: false },
@@ -32,14 +34,18 @@ export default function App() {
     {
       questionText: "Where does the name Berghain come from ?",
       answerOptions: [
-        { answerText: "The name of a Berlin underground party", isCorrect: false },
+        {
+          answerText: "The name of a Berlin underground party",
+          isCorrect: false,
+        },
         { answerText: "The DJ name of his creator", isCorrect: false },
         { answerText: "The name of a sex position", isCorrect: false },
         { answerText: "The name of Berlin neighbourhoods", isCorrect: true },
       ],
     },
     {
-      questionText: "During the festival “Weather Festival” that took place on the airport Le Bourget in Paris in 2014, which celebrity took off in front of the crowd during the set of the collective Camion Bazar ?",
+      questionText:
+        "During the festival “Weather Festival” that took place on the airport Le Bourget in Paris in 2014, which celebrity took off in front of the crowd during the set of the collective Camion Bazar ?",
       answerOptions: [
         { answerText: "Francois Hollande", isCorrect: false },
         { answerText: "Lionel Messi", isCorrect: false },
@@ -66,7 +72,8 @@ export default function App() {
       ],
     },
     {
-      questionText: "What is the name of the house music legend who produced “Get Get Down” and sadly died at the age of 50 in 2021 ?",
+      questionText:
+        "What is the name of the house music legend who produced “Get Get Down” and sadly died at the age of 50 in 2021 ?",
       answerOptions: [
         { answerText: "Eric Morillo", isCorrect: false },
         { answerText: "Kelli Hand", isCorrect: false },
@@ -98,11 +105,12 @@ export default function App() {
 
   const [showScore, setShowScore] = useState(false);
 
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
 
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
-setScore(score +1);    }
+      setScore(score + 1);
+    }
 
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
@@ -117,14 +125,38 @@ setScore(score +1);    }
       {/* HINT: replace "false" with logic to display the 
       score when the user has answered all the questions */}
       {showScore ? (
-        <><div className="score-section">
-          You scored {score} out of {questions.length}
-        </div><div>Answers</div></>
+        <>
+          <div className="score-section">
+            You scored {score} out of {questions.length}
+          </div>
+          <div class="answers-section">
+            <div class="question">{questions[0].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[1].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[2].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[3].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[4].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[5].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[6].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[7].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[8].questionText}</div>
+            <div class="answer">Hör</div>
+            <div class="question">{questions[9].questionText}</div>
+            <div class="answer">Hör</div>
+          </div>
+        </>
       ) : (
         <>
           <div className="question-section">
             <div className="question-count">
-              <span>Question {currentQuestion+1}</span>/{questions.length}
+              <span>Question {currentQuestion + 1}</span>/{questions.length}
             </div>
             <div className="question-text">
               {questions[currentQuestion].questionText}
@@ -132,7 +164,9 @@ setScore(score +1);    }
           </div>
           <div className="answer-section">
             {questions[currentQuestion].answerOptions.map((answerOption) => (
-              <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>
+              <button
+                onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}
+              >
                 {answerOption.answerText}
               </button>
             ))}
